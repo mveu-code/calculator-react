@@ -1,4 +1,4 @@
-.Main .content {
+.Admin .content {
     min-height: calc(100vh - 70px - 70px);
     display: flex;
     flex-direction: row;

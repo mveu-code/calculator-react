@@ -1,18 +1,18 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import './Main.css';
+import './Admin.css';
 
-function Main() {
+function Admin() {
   return (
-    <div className='Main'>
+    <div className='Admin'>
         <Header/>
         <div className='content'>
-            <h1>Главная страница</h1>
+            <h1>Страница администратора</h1>
         </div>
         <Footer/>
     </div>
   );
 }
 
-export default Main;
+export default Admin;
