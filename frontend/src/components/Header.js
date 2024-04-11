@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css'
 
 function Header() {
   return (
     <div className='Header'>
-        <h1>Калькуляторы</h1>
+        <Link to="/Main">Калькуляторы</Link>
     </div>
   );
 }

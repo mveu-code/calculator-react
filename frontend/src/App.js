@@ -9,8 +9,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='' element={<Main/>} />
-        <Route path='admin' element={<Admin/>} />
+        <Route path='/Main' element={<Main/>} />
+        <Route path='/Admin' element={<Admin/>} />
         <Route path='/InterfaceCalc' element={<InterfaceCalc/>} />
       </Routes>
     </BrowserRouter>
