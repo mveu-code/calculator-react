@@ -1,6 +1,6 @@
 import { Route, Routes, Link } from "react-router-dom";
 import "./Main.css";
-
+import Calculator from './Calculator';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import React from "react";
@@ -16,10 +16,7 @@ function Main() {
         <Header />
         <div className="content">
           <p className="link1">{CalcObject.name}</p>
-
-          <a href="/Calc" className="btn">
-            Пeрейти
-          </a>
+          <Link to="/InterfaceCalc" className="btn">Пeрейти</Link>
         </div>
         <Footer />
       </div>
