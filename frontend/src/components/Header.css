@@ -8,6 +8,9 @@
     height: 70px;
 }
 
-.Header h1 {
+.HeaderLink {
+    font-size: 30px;
+    font-weight: bolder;
+    text-decoration: none;
     color: white;
 }

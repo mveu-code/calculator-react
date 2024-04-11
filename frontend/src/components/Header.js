@@ -5,7 +5,7 @@ import './Header.css'
 function Header() {
   return (
     <div className='Header'>
-        <Link to="/Main">Калькуляторы</Link>
+        <Link className="HeaderLink" to="/Main">Калькуляторы</Link>
     </div>
   );
 }
