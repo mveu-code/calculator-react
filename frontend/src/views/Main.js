@@ -12,7 +12,6 @@ const CalcObject = {
 
 function Main() {
   return (
-    <>
       <div className="Main">
         <Header />
         <div className="content">
@@ -22,9 +21,8 @@ function Main() {
             Пeрейти
           </a>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </>
   );
 }
 
