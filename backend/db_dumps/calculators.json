@@ -2,7 +2,7 @@
   "_id": {
     "$oid": "66191febbce65bb7450d7b0b"
   },
-  "NameCalc": "Test",
+  "nameCalc": "Test",
   "numberFields": [
     0,
     0,
