@@ -3,13 +3,15 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 import Main from './views/Main';
 import Admin from './views/Admin';
+import InterfaceCalc from './views/InterfaceCalc';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='' element={<Main/>} />
-        <Route path='admin' element={<Admin/>} />
+        <Route path='/Main' element={<Main/>} />
+        <Route path='/Admin' element={<Admin/>} />
+        <Route path='/InterfaceCalc' element={<InterfaceCalc/>} />
       </Routes>
     </BrowserRouter>
   );
