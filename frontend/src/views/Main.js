@@ -12,14 +12,16 @@ const CalcObject = {
 
 function Main() {
   return (
+    <>
+    <Header />
       <div className="Main">
-        <Header />
         <div className="content">
           <p className="link1">{CalcObject.name}</p>
           <Link to="/InterfaceCalc" className="btn">Пeрейти</Link>
         </div>
-        <Footer />
       </div>
+      <Footer />
+    </>
   );
 }
 
