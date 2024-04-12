@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "66191febbce65bb7450d7b0b"
+  },
+  "nameCalc": "Test",
+  "numberFields": [
+    0,
+    0,
+    0
+  ],
+  "formula": "a + b + c"
+}]

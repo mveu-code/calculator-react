@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose')
 
 const Calculator = new Schema({
-    NameCalc: {
+    nameCalc: {
         type: String,
         required: true
     },
