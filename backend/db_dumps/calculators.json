@@ -4,9 +4,7 @@
   },
   "nameCalc": "Test",
   "numberFields": [
-    0,
-    0,
-    0
+    "a", "b", "c"
   ],
   "formula": "a + b + c"
 }]
