@@ -9,8 +9,8 @@ function Admin() {
     <div className='Admin'>
         <Header/>
         <div className='content'>
-            <h1>Страница администратора</h1>
-            <input id="formula" type="number" placeholder="Введите формулу"></input>
+            <p>Создать калькулятор:</p>
+            <input id="formula" type="text" placeholder="Введите формулу"></input>
             <input id="name" type="text" placeholder="Введите название калькулятора"></input>
             <button id="create">Создать</button>
         </div>
@@ -21,5 +21,7 @@ function Admin() {
 
 const formula = 'fffff';
 const name = document.getElementById('name');
+
+
 
 export default Admin;
