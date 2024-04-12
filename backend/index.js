@@ -7,6 +7,7 @@ const jsonwebtoken = require('jsonwebtoken')
 const mongoose = require('mongoose')
 const { secret } = require('./config')
 const User = require('./models/User')
+const Calculator = require('./models/Calculator')
 
 const app = express()
 
