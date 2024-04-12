@@ -6,7 +6,7 @@ const Calculator = new Schema({
         required: true
     },
     numberFields: {
-        type: [Number],
+        type: [String],
         required: true
     },
     formula: {
