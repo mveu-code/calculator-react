@@ -11,8 +11,6 @@ const Calculator = require('./models/Calculator')
 
 const app = express()
 
-const duplicateKeyCode = 11000
-
 const generateAccessToken = (id, login, role) => {
     const payload = {
         id, login, role
@@ -23,39 +21,6 @@ const generateAccessToken = (id, login, role) => {
 
 app.use(cors())
 app.use(express.json())
-
-app.post('/registration', async (req, res) => {
-    console.log(req.body)
-    const { login, password } = req.body
-    const user = new User({ login, password, role: "user" })
-
-    try {
-        await user.save()
-    } catch (err) {
-        if (err && err.code !== 11000) {
-            res.json({
-                message: 'Неизвестная ошибка.'
-            })
-                .status(500)
-
-            return
-        }
-
-        if (err && err.code === duplicateKeyCode) {
-            res.json({
-                message: 'Не используйте повторно эти данные!'
-            })
-                .status(400)
-            console.error('Не используйте повторно эти данные!')
-
-            return
-        }
-    }
-
-    res.json({
-        message: 'Вы успешно зарегистрировались!'
-    })
-})
 
 app.post('/login', async (req, res) => {
     console.log(req.body)
@@ -87,7 +52,7 @@ app.post('/login', async (req, res) => {
     })
 })
 
-app.post('/user/changePassword', async (req, res) => {
+app.post('/user/change/password', async (req, res) => {
     console.log(req.body)
     const { token, password } = req.body
     let user
@@ -117,45 +82,39 @@ app.post('/user/changePassword', async (req, res) => {
     })
 })
 
-app.post('/user/changeEmail', async (req, res) => {
+app.post('/admin/add/calculator', async (req, res) => {
     console.log(req.body)
-    const { token, email } = req.body
-    let user
+    const { token, calculator } = req.body
 
     try {
-        user = await User.findOneAndUpdate({ login: jsonwebtoken.verify(token, secret).login },
-            { email: email }, { returnOriginal: false })
+        const user = await User.findOne({ login: jsonwebtoken.verify(token, secret).login },
+                                    { returnOriginal: false })
 
         if (user === null) {
             res.json({
                 message: 'Пользователь отсутствует в базе.'
             })
                 .status(400)
+        } else if (user.role !== "admin") {
+            res.json({
+                message: 'Вы не админ!'
+            })
+                .status(403)
         }
+
+        const calc = new Calculator(calculator)
+        await calc.save()
     } catch (err) {
-        if (err && err.code !== 11000) {
-            res.json({
-                message: 'Неизвестная ошибка.'
-            })
-                .status(500)
+        res.json({
+            message: 'Неизвестная ошибка.'
+        })
+            .status(500)
 
-            return
-        }
-
-        if (err && err.code === duplicateKeyCode) {
-            res.json({
-                message: 'Не используйте повторно эти данные!'
-            })
-                .status(400)
-            console.error('Не используйте повторно эти данные!')
-
-            return
-        }
+        return
     }
 
     res.json({
-        message: 'E-Mail изменён! Для применения изменений заново авторизуйтесь!',
-        newEmail: user.email
+        message: 'Калькулятор добавлен!'
     })
 })
 
