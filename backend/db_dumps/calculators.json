@@ -4,7 +4,18 @@
   },
   "nameCalc": "Test",
   "numberFields": [
-    "a", "b", "c"
+    {
+      "fieldName": "Field 1",
+      "field": "a"
+    },
+    {
+      "fieldName": "Field 2",
+      "field": "b"
+    },
+    {
+      "fieldName": "Field 3",
+      "field": "c"
+    }
   ],
   "formula": "a + b + c"
 }]
