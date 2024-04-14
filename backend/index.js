@@ -105,6 +105,40 @@ app.post('/admin/add/calculator', async (req, res) => {
         const calc = new Calculator(calculator)
         await calc.save()
     } catch (err) {
+        if (err && err.code !== 11000) {
+            res.json({
+                message: 'Неизвестная ошибка.'
+            })
+                .status(500)
+
+            return
+        }
+
+        //duplicate key
+        if (err && err.code === 11000) {
+            res.json({
+                message: 'Не используйте повторно это имя!'
+            })
+                .status(400)
+            console.error('Не используйте повторно это имя!')
+
+            return
+        }
+    }
+
+    res.json({
+        message: 'Калькулятор добавлен!'
+    })
+})
+
+app.get('/calculator/get', async (req, res) => {
+    console.log(req.body)
+    const { nameCalc } = req.body
+    let calc
+
+    try {
+        calc = Calculator.findOne({nameCalc});
+    } catch (err) {
         res.json({
             message: 'Неизвестная ошибка.'
         })
@@ -113,9 +147,7 @@ app.post('/admin/add/calculator', async (req, res) => {
         return
     }
 
-    res.json({
-        message: 'Калькулятор добавлен!'
-    })
+    res.json(calc)
 })
 
 const start = async () => {
