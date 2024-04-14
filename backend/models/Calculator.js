@@ -14,7 +14,8 @@ const numberFields = new Schema({
 const Calculator = new Schema({
     nameCalc: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     numberFields: {
         type: [numberFields],
