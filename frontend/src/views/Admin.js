@@ -1,9 +1,24 @@
+import { useState, useEffect } from 'react';
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import './Admin.css';
 
 function Admin() {
+
+    const [Calc, setCalc] = useState([]);
+    const [CalcTitle, setCalcTitle] = useState('');
+
+    useEffect(() => {
+        const api = 'http://127.0.0.1:9001'
+
+        fetch(api)
+        .then((result) => result.json())
+        .then((result) => {
+            setCalc(result.data)
+        })
+    }, []);
+
     return (
         <>
             <Header />
