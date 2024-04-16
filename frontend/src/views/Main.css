@@ -11,28 +11,27 @@
 }
 
 .content {
-
     justify-content: center;
-        align-items: center;
-        display: flex;
-        padding: 20px;
-        background-color: rgb(255, 255, 255);
-        max-width: 100%;
-        flex-wrap: wrap;
-    }
-    
+    align-items: center;
+    display: flex;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
 .link1 {
-        max-width: 100%;
-        flex-wrap: wrap;
-    }
-    
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
 .btn {
-        flex-wrap: wrap;
-        max-width: 100%;
-        margin-left: 10px;
-        font-size: 15px;
-        text-decoration: none;
-        color: rgb(255, 255, 255);
-        background-color: #009999;
-        padding: 10px;
-    }
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin-left: 10px;
+    font-size: 15px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: #009999;
+    padding: 10px;
+}
