@@ -18,6 +18,4 @@ function InterfaceCalc() {
     );
 }
 
-
-
 export default InterfaceCalc;

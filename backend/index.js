@@ -52,7 +52,7 @@ app.post('/login', async (req, res) => {
     })
 })
 
-app.post('/user/change/password', async (req, res) => {
+app.post('/user/password/change', async (req, res) => {
     console.log(req.body)
     const { token, password } = req.body
     let user
@@ -82,7 +82,7 @@ app.post('/user/change/password', async (req, res) => {
     })
 })
 
-app.post('/admin/add/calculator', async (req, res) => {
+app.post('/calculator/add', async (req, res) => {
     console.log(req.body)
     const { token, calculator } = req.body
 
@@ -131,7 +131,7 @@ app.post('/admin/add/calculator', async (req, res) => {
     })
 })
 
-app.get('/calculator/get', async (req, res) => {
+app.get('/calculator/get/one', async (req, res) => {
     console.log(req.body)
     const { nameCalc } = req.body
     let calc
@@ -154,7 +154,7 @@ app.get('/calculator/get/all', async (req, res) => {
     let calc
 
     try {
-        calc = Calculator.find({}, 'nameCalc')
+        calc = await Calculator.find({}, 'nameCalc')
     } catch (err) {
         res.json({
             message: 'Неизвестная ошибка.'
