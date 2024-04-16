@@ -147,7 +147,24 @@ app.get('/calculator/get', async (req, res) => {
         return
     }
 
-    res.json(calc)
+    res.json({data: calc})
+})
+
+app.get('/calculator/get/all', async (req, res) => {
+    let calc
+
+    try {
+        calc = Calculator.find({}, 'nameCalc')
+    } catch (err) {
+        res.json({
+            message: 'Неизвестная ошибка.'
+        })
+            .status(500)
+
+        return
+    }
+
+    res.json({data: calc})
 })
 
 const start = async () => {
