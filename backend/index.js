@@ -137,7 +137,7 @@ app.get('/calculator/get/one', async (req, res) => {
     let calc
 
     try {
-        calc = Calculator.findOne({nameCalc});
+        calc = await Calculator.findOne({nameCalc});
     } catch (err) {
         res.json({
             message: 'Неизвестная ошибка.'
