@@ -4,17 +4,17 @@ import {Routes, Route, Link, useParams} from 'react-router-dom';
 import InterfaceCalc from "../views/InterfaceCalc";
 import {useEffect, useState} from 'react';
 
-function CalculatorItem({nameCalc}) {
+function CalculatorItem({ nameCalc, _id }) {
     
 
     const [calc, setCalc] = useState([])
 
 
         useEffect(() => {
-            const api = (`http://127.0.0.1:9001/calculator/get/one`)
+            const api = (`http://127.0.0.1:9001/calculator/get/all`)
     
             fetch(api)
-                .then((result) => result.json())
+                .then((res) => res.json())
                 .then((result) => {
     
                     setCalc(result.data)
@@ -22,16 +22,28 @@ function CalculatorItem({nameCalc}) {
         }, [])
 
 
-    return(
-        
-        <div className="CalculatorItem">
-            <p>{nameCalc}</p>
-            <p>{console.log(calc)}</p>
-            <Link to={`InterfaceCalc`}>Перейти</Link>
+        let element;
 
-        </div>
-        //${id}
-    )
+    
+        function processElement(currentElement) {
+          element = currentElement; 
+        }
+        
+        calc.forEach(processElement);
+        
+
+        if (element) {
+          return (
+            <div className="CalculatorItem">
+              <p>{element.nameCalc}</p>
+              <Link to={`InterfaceCalc/${element._id}`}>Перейти</Link>
+            </div>
+          );
+        } else {
+
+          console.error('Элемент не найден');
+          return null; 
+        }
 }
 
 export default CalculatorItem
