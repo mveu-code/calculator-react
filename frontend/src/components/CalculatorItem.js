@@ -1,38 +1,26 @@
 import React from "react";
 import "./CalculatorItem.css";
-import { Routes, Route, Link, useParams } from "react-router-dom";
-import InterfaceCalc from "../views/InterfaceCalc";
 import { useEffect, useState } from "react";
 
-function CalculatorItem() {
-  const [calc, setCalc] = useState([]);
+function CalculatorItem({ id }) {
+  const [calc, setCalc] = useState({});
 
   useEffect(() => {
-    const api = `http://127.0.0.1:9001/calculator/get/all`;
+    const api = `http://127.0.0.1:9001/calculator/get/one/` + id;
 
     fetch(api)
       .then((res) => res.json())
       .then((result) => {
         setCalc(result.data);
       });
-  }, []);
+  });
 
-  let element;
-
-  function processElement(currentElement) {
-    element = currentElement;
-  }
-
-  calc.forEach(processElement);
-
-  if (element) {
-    return (
-      <div className="CalculatorItem">
-        <p>{element.nameCalc}</p>
-        <Link to={`InterfaceCalc/${element._id}`}>Перейти</Link>
-      </div>
-    );
-  }
+  return (
+    <div className="CalculatorItem">
+      <p>{calc.nameCalc}</p>
+      <a href={`/interfaceCalc/${calc._id}`} className="btn">Перейти</a>
+    </div>
+  );
 }
 
 export default CalculatorItem;

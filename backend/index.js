@@ -35,6 +35,8 @@ app.post('/login', async (req, res) => {
         })
             .status(500)
 
+        console.error(err)
+
         return
     }
 
@@ -72,6 +74,8 @@ app.post('/user/password/change', async (req, res) => {
             message: 'Неизвестная ошибка.'
         })
             .status(500)
+
+        console.error(err)
 
         return
     }
@@ -120,6 +124,7 @@ app.post('/calculator/add', async (req, res) => {
                 message: 'Не используйте повторно это имя!'
             })
                 .status(400)
+
             console.error('Не используйте повторно это имя!')
 
             return
@@ -131,18 +136,19 @@ app.post('/calculator/add', async (req, res) => {
     })
 })
 
-app.get('/calculator/get/one', async (req, res) => {
-    console.log(req.body)
-    const { nameCalc } = req.body
+app.get('/calculator/get/one/:id', async (req, res) => {
+    const id = req.params.id
     let calc
 
     try {
-        calc = await Calculator.findOne({nameCalc});
+        calc = await Calculator.findById(id);
     } catch (err) {
         res.json({
             message: 'Неизвестная ошибка.'
         })
             .status(500)
+        
+        console.error(err)
 
         return
     }
@@ -160,6 +166,8 @@ app.get('/calculator/get/all', async (req, res) => {
             message: 'Неизвестная ошибка.'
         })
             .status(500)
+
+        console.error(err)
 
         return
     }
