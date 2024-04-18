@@ -1,4 +1,3 @@
-// import { useState, useEffect } from 'react';
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -8,8 +7,6 @@ function Admin() {
   function AddCalc() {
     const formula = document.getElementById('formula').value
     const nameCalc = document.getElementById('name').value
-
-    let message
 
     const data = {
       nameCalc: nameCalc,
@@ -29,20 +26,21 @@ function Admin() {
     })
   }
 
-     
-    return (
-        <>
-            <Header />
-            <div className='Admin'>
-                <div className='content'>
-                    <p>Создать калькулятор:</p>
-                    <input id="formula" type="text"placeholder="Введите формулу"></input>
-                    <input id="name" type="text" placeholder="Введите название калькулятора"></input>
-                    <button id="create" onClick={() => AddCalc()}>Создать</button>
-                </div>
-            </div>
-            <Footer />
-        </>
-    );
-  }
+
+  return (
+    <>
+      <Header />
+      <div className='Admin'>
+        <div className='content'>
+          <p>Создать калькулятор:</p>
+          <input id="formula" type="text" placeholder="Введите формулу"></input>
+          <input id="name" type="text" placeholder="Введите название калькулятора"></input>
+          <button id="create" onClick={() => AddCalc()}>Создать</button>
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+}
+
 export default Admin;
