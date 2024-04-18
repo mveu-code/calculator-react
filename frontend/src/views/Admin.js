@@ -7,13 +7,13 @@ import './Admin.css';
 function Admin({ setModalBox, setMessage }) {
   function AddCalc() {
     const formula = document.getElementById('formula').value
-    const name = document.getElementById('name').value
+    const nameCalc = document.getElementById('name').value
 
     let message
 
     const data = {
       formula: formula,
-      name: name
+      name: nameCalc
     }
 
     console.debug(data)

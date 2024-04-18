@@ -1,20 +1,23 @@
 import Header from '../components/Header';
 import { useState, useEffect } from 'react';
 import Footer from '../components/Footer';
+import { useParams } from 'react-router-dom';
 import CalculatorItem from "../components/CalculatorItem";
 
 import React from 'react';
 
 function InterfaceCalc() {
+    const {id} = useParams();
+
     const [calc, setCalc] = useState([])
 
     useEffect(() => {
-        const api = 'http://127.0.0.1:9001/calculator/get/all'
+        const api = (`http://127.0.0.1:9001/calculator/get/all`)
 
         fetch(api)
             .then((result) => result.json())
             .then((result) => {
-                // console.debug(result.data)
+
                 setCalc(result.data)
             })
     }, [])
@@ -23,7 +26,9 @@ function InterfaceCalc() {
         <>
             <Header />
             <div>
-                <h1>{calc.map((item) => <CalculatorItem nameCalc={item.nameCalc}/>)}</h1>
+
+                <p>{id}</p>
+                
                 <input id="x" type="number" placeholder="Введите первое число" min="0"></input>
                 <input id="y" type="number" placeholder="Введите второе число" min="0"></input>
                 <button id="result">Вычислить</button>

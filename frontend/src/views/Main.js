@@ -23,7 +23,9 @@ function Main() {
             <Header />
             <div className="Main">
                 <div className="content">
-                    {calc.map((item) => <CalculatorItem nameCalc={item.nameCalc}/>)}
+                    {calc.map((item) => (
+                    <CalculatorItem nameCalc={item.nameCalc}/>
+                    ))}
                 </div>
             </div>
             <Footer />
