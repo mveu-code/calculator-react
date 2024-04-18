@@ -1,61 +1,42 @@
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
-import { useParams } from "react-router-dom";
-import CalculatorItem from "../components/CalculatorItem";
+import './InterfaceCalc.css'
 
 import React from "react";
+import { useParams } from "react-router-dom";
 
-function InterfaceCalc({ nameCalc }) {
-  const [calc, setCalc] = useState([]);
+function InterfaceCalc() {
+  const { id } = useParams()
+  const [calc, setCalc] = useState({});
 
   useEffect(() => {
-    const api = `http://127.0.0.1:9001/calculator/get/all`;
+    const api = `http://127.0.0.1:9001/calculator/get/one/` + id;
 
     fetch(api)
       .then((res) => res.json())
       .then((result) => {
-        setCalc(result.data);
+        // console.debug(result)
+        setCalc(result.data)
       });
-  }, []);
+  }, [id]);
 
-  let element;
-  function processElement(currentElement) {
-    element = currentElement;
-  }
-  calc.forEach(processElement);
-  console.log(element);
-
-  var variables = {
-    x: 5,
-  };
-
-  //var expression = math.parse('a+b+c');
+  // const expression = math.parse('a+b+c');
   // console.log(expression);
-  if (element) {
   return (
     <>
       <Header />
-      <div>
-        <p>{element.nameCalc}</p>
-        <input
-          id="x"
-          type="number"
-          placeholder="Введите первое число"
-          min="0"
-        ></input>
-        <input
-          id="y"
-          type="number"
-          placeholder="Введите второе число"
-          min="0"
-        ></input>
+      <div className="InterfaceCalc">
+        <p>{calc.nameCalc}</p>
+        {console.debug(calc)}
+        {calc.numberFields?.map((item) => (
+          <input id={item.field} type="number" placeholder={item.fieldName} key={item.field}/>
+        ))}
         <button id="result">Вычислить</button>
       </div>
       <Footer />
     </>
   );
-}
 }
 
 export default InterfaceCalc;

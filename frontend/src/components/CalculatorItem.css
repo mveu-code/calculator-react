@@ -2,17 +2,20 @@
     width: 500px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.CalculatorItem button {
+.CalculatorItem .btn {
+    height: 25px;
     border-radius: 10px;
     border-style: none;
     font-size: large;
     color: white;
     background-color: #009999;
     padding: 10px;
+    text-align: center;
 }
 
 .CalculatorItem p {
-    font-size: larger;
+    font-size: x-large;
 }
