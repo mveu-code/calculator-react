@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import './InterfaceCalc.css'
+import { parse } from 'mathjs'
 
 import React from "react";
 import { useParams } from "react-router-dom";
@@ -21,14 +22,19 @@ function InterfaceCalc() {
       });
   }, [id]);
 
-  // const expression = math.parse('a+b+c');
-  // console.log(expression);
+  let expression
+
+  if (Object.hasOwn(calc, 'formula')) {
+    expression = parse(calc.formula);
+    console.debug(expression)
+  }
+
   return (
     <>
       <Header />
       <div className="InterfaceCalc">
         <p>{calc.nameCalc}</p>
-        {console.debug(calc)}
+        <p>Формула: {calc.formula}</p>
         {calc.numberFields?.map((item) => (
           <input id={item.field} type="number" placeholder={item.fieldName} key={item.field}/>
         ))}
