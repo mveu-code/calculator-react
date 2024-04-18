@@ -2,7 +2,7 @@ import "./Main.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CalculatorItem from "../components/CalculatorItem";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
 function Main() {
     const [calc, setCalc] = useState([])
@@ -24,7 +24,7 @@ function Main() {
             <div className="Main">
                 <div className="content">
                     {calc.map((item) => (
-                    <CalculatorItem nameCalc={item.nameCalc}/>
+                        <CalculatorItem id={item._id} />
                     ))}
                 </div>
             </div>

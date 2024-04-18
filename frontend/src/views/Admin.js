@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import './Admin.css';
 
-function Admin({ setModalBox, setMessage }) {
+function Admin() {
   function AddCalc() {
     const formula = document.getElementById('formula').value
     const nameCalc = document.getElementById('name').value
@@ -12,8 +12,8 @@ function Admin({ setModalBox, setMessage }) {
     let message
 
     const data = {
-      formula: formula,
-      name: nameCalc
+      nameCalc: nameCalc,
+      formula: formula
     }
 
     console.debug(data)
