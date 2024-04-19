@@ -10,12 +10,17 @@
     flex-wrap: wrap;
 }
 
-.Admin .content input {
+.Admin .content input, .Admin .content textarea {
     margin-bottom: 15px;
     padding: 5px;
     border-radius: 10px;
     border-color: #009999;
     border-style: solid;
+}
+
+.Admin .content textarea {
+    min-height: 300px;
+    resize: vertical;
 }
 
 .Admin .content button {
