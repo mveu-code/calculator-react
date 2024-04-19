@@ -11,9 +11,9 @@ const Calculator = require('./models/Calculator')
 
 const app = express()
 
-const generateAccessToken = (id, login, role) => {
+const generateAccessToken = (id, login) => {
     const payload = {
-        id, login, role
+        id, login
     }
 
     return jsonwebtoken.sign(payload, secret, { expiresIn: '24h' })
@@ -41,48 +41,17 @@ app.post('/login', async (req, res) => {
     }
 
     if (!user) {
+        console.log('Пользователь отсутствует в базе.')
         return res.status(400).json({ message: 'Пользователь отсутствует в базе.' })
     }
     if (user.password !== password) {
+        console.log('Неверный логин или пароль!')
         return res.status(400).json({ message: 'Неверный логин или пароль!' })
     }
-    const jwtToken = generateAccessToken(user._id, user.login, user.role)
+    const jwtToken = generateAccessToken(user._id, user.login)
 
     res.json({
-        message: 'Вы успешно вошли на сайт!',
         token: jwtToken
-    })
-})
-
-app.post('/user/password/change', async (req, res) => {
-    console.log(req.body)
-    const { token, password } = req.body
-    let user
-
-    try {
-        user = await User.findOneAndUpdate({ login: jsonwebtoken.verify(token, secret).login },
-            { password: password }, { returnOriginal: false })
-
-        if (user === null) {
-            res.json({
-                message: 'Пользователь отсутствует в базе.'
-            })
-                .status(400)
-        }
-    } catch (err) {
-        res.json({
-            message: 'Неизвестная ошибка.'
-        })
-            .status(500)
-
-        console.error(err)
-
-        return
-    }
-
-    res.json({
-        message: 'Пароль изменён!',
-        newPassword: user.password
     })
 })
 
@@ -99,11 +68,8 @@ app.post('/calculator/add', async (req, res) => {
                 message: 'Пользователь отсутствует в базе.'
             })
                 .status(400)
-        } else if (user.role !== "admin") {
-            res.json({
-                message: 'Вы не админ!'
-            })
-                .status(403)
+
+            console.log('Пользователь отсутствует в базе.')
         }
 
         const calc = new Calculator(calculator)
@@ -114,6 +80,8 @@ app.post('/calculator/add', async (req, res) => {
                 message: 'Неизвестная ошибка.'
             })
                 .status(500)
+            
+            console.log(err)
 
             return
         }
