@@ -1,21 +1,43 @@
 [{
-  "_id": {
-    "$oid": "66191febbce65bb7450d7b0b"
-  },
-  "nameCalc": "Test",
+  "nameCalc": "Стоимость ипотеки",
   "numberFields": [
     {
-      "fieldName": "Field 1",
+      "fieldName": "Сумма ипотеки",
       "field": "a"
     },
     {
-      "fieldName": "Field 2",
+      "fieldName": "Срок ипотеки (в годах)",
       "field": "b"
-    },
-    {
-      "fieldName": "Field 3",
-      "field": "c"
     }
   ],
-  "formula": "a + b + c"
-}]
+  "formula": "(a / 100 * (9.6 * b)) + a"
+},
+{
+  "nameCalc": "Стоимость автокредита",
+  "numberFields": [
+    {
+      "fieldName": "Сумма автокредита",
+      "field": "a"
+    },
+    {
+      "fieldName": "Срок автокредита (в годах)",
+      "field": "b"
+    }
+  ],
+  "formula": "(a / 100 * (3.5 * b)) + a"
+},
+{
+  "nameCalc": "Стоимость потребительского кредита",
+  "numberFields": [
+    {
+      "fieldName": "Сумма потребительского кредита",
+      "field": "a"
+    },
+    {
+      "fieldName": "Срок потребительского кредита (в годах)",
+      "field": "b"
+    }
+  ],
+  "formula": "(a / 100 * (14.5 * b)) + a"
+}
+]
