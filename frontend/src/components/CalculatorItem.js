@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "./CalculatorItem.css";
 import { useEffect, useState } from "react";
 
@@ -18,7 +19,7 @@ function CalculatorItem({ id }) {
   return (
     <div className="CalculatorItem">
       <p>{calc.nameCalc}</p>
-      <a href={`/interfaceCalc/${calc._id}`} className="btn">Перейти</a>
+      <Link to={`/interfaceCalc/${calc._id}`} className="btn">Перейти</Link>
     </div>
   );
 }
