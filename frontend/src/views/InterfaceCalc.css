@@ -30,3 +30,13 @@
     text-align: center;
     font-size: x-large;
 }
+
+@media (max-width: 768px) {
+    .InterfaceCalc {
+        width: 300px;
+    }
+
+    .InterfaceCalc p {
+        font-size: larger;
+    }
+}

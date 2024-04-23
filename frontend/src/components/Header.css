@@ -14,3 +14,10 @@
     text-decoration: none;
     color: white;
 }
+
+@media (max-width: 768px) {
+    .Header {
+        justify-content: center;
+        height: 100px;
+    }
+}

@@ -19,3 +19,14 @@
 .CalculatorItem p {
     font-size: x-large;
 }
+
+@media (max-width: 768px) {
+    .CalculatorItem {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .CalculatorItem p {
+        font-size: larger;
+    }
+}
