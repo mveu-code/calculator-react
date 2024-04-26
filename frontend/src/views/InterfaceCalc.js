@@ -41,10 +41,30 @@ function InterfaceCalc() {
 
     setResult({
       price,
+      time,
       commonPercent: commonPercent.toFixed(2),
       sumPerMonth: Math.round(sumPerMonth),
       neededMoney: Math.round(neededMoney)
     })
+  }
+
+  const Result = () => {
+    if (result.price <= 0 || result.time <= 0) {
+      return (
+        <>
+          <p>Введите корректные данные о будущем кредите, чтобы спланировать свои мечты.</p>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <p>Стоимость кредита: {result.price} рублей</p>
+          <p>Общая ставка кредита: {result.commonPercent}%</p>
+          <p>Ежемесячный платёж: {result.sumPerMonth} рублей (без учёта копеек)</p>
+          <p>Необходимый доход: {result.neededMoney} рублей (без учёта копеек)</p>
+        </>
+      )
+    }
   }
 
   return (
@@ -56,10 +76,7 @@ function InterfaceCalc() {
         <input id="time" type="number" placeholder="Срок (в годах)" />
         <input id="firstSum" type="number" placeholder="Первоначальная сумма (в рублях)" />
         <button id="result" onClick={calculate}>Вычислить</button>
-        <p>Стоимость кредита: {result.price} рублей</p>
-        <p>Общая ставка кредита: {result.commonPercent}%</p>
-        <p>Ежемесячный платёж: {result.sumPerMonth} рублей (без учёта копеек)</p>
-        <p>Необходимый доход: {result.neededMoney} рублей (без учёта копеек)</p>
+        <Result />
       </div>
       <Footer />
     </>
