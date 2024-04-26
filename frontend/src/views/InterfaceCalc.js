@@ -35,15 +35,15 @@ function InterfaceCalc() {
 
     const price = sum - firstSum
     const percentPerMonth = percent / 12 / 100
-    const commonPercent = (1 + percentPerMonth) ^ time * 12
-    const sumPerMonth = sum * percentPerMonth * commonPercent / (commonPercent - 1)
+    const commonPercent = (1 + percentPerMonth) ** (time * 12)
+    const sumPerMonth = price * percentPerMonth * commonPercent / (commonPercent - 1)
     const neededMoney = sumPerMonth * 2.5
 
     setResult({
       price,
-      commonPercent,
-      sumPerMonth,
-      neededMoney
+      commonPercent: commonPercent.toFixed(2),
+      sumPerMonth: Math.round(sumPerMonth),
+      neededMoney: Math.round(neededMoney)
     })
   }
 
@@ -52,14 +52,14 @@ function InterfaceCalc() {
       <Header />
       <div className="InterfaceCalc">
         <p>{calc.nameCalc}</p>
-        <input id="sum" type="number" placeholder="Сумма" />
-        <input id="time" type="number" placeholder="Срок" />
-        <input id="firstSum" type="number" placeholder="Первоначальная сумма" />
+        <input id="sum" type="number" placeholder="Сумма (в рублях)" />
+        <input id="time" type="number" placeholder="Срок (в годах)" />
+        <input id="firstSum" type="number" placeholder="Первоначальная сумма (в рублях)" />
         <button id="result" onClick={calculate}>Вычислить</button>
-        <p>Стоимость кредита: {result.price}</p>
-        <p>Общая ставка кредита: {result.commonPercent}</p>
-        <p>Ежемесячный платёж: {result.sumPerMonth}</p>
-        <p>Необходимый доход: {result.neededMoney}</p>
+        <p>Стоимость кредита: {result.price} рублей</p>
+        <p>Общая ставка кредита: {result.commonPercent}%</p>
+        <p>Ежемесячный платёж: {result.sumPerMonth} рублей (без учёта копеек)</p>
+        <p>Необходимый доход: {result.neededMoney} рублей (без учёта копеек)</p>
       </div>
       <Footer />
     </>
