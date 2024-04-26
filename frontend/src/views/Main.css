@@ -6,6 +6,11 @@
     margin-left: auto;
     margin-right: auto;
     width: 400px;
-    max-width: 100%;
     flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .Main .content {
+        width: 300px;
+    }
 }
