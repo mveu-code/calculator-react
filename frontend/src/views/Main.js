@@ -22,11 +22,9 @@ function Main() {
         <>
             <Header />
             <div className="Main">
-                <div className="content">
-                    {calc.map((item) => (
-                        <CalculatorItem id={item._id} key={item._id} />
-                    ))}
-                </div>
+                {calc.map((item) => (
+                    <CalculatorItem id={item._id} key={item._id} />
+                ))}
             </div>
             <Footer />
         </>

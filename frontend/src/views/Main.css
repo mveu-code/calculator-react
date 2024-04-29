@@ -1,4 +1,4 @@
-.Main .content {
+.Main {
     min-height: calc(100vh - 70px - 70px);
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
 }
 
 @media (max-width: 768px) {
-    .Main .content {
+    .Main {
         width: 300px;
     }
 }
