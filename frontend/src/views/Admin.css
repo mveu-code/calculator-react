@@ -3,9 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 400px;
+    align-items: center;
     max-width: 100%;
     flex-wrap: wrap;
     padding-bottom: 20px;
@@ -17,6 +15,7 @@
     border-radius: 10px;
     border-color: #009999;
     border-style: solid;
+    width: 285px;
 }
 
 .Admin button {
@@ -25,6 +24,7 @@
     border-style: none;
     background-color: #009999;
     color: white;
+    width: 300px;
 }
 
 .Admin p {
@@ -32,12 +32,39 @@
     font-size: x-large;
 }
 
-@media (max-width: 768px) {
-    .Admin {
-        width: 300px;
-    }
+.Admin .calcs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 70%;
+}
 
+.Admin .calcs .calc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border-color: #009999;
+    width: 300px;
+}
+
+.Admin .calcs .calc button {
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.Admin .calcs .calc p {
+    font-size: medium;
+}
+
+@media (max-width: 768px) {
     .Admin p {
         font-size: larger;
+    }
+
+    .Admin .calcs {
+        max-width: 100%;
     }
 }

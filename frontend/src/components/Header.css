@@ -30,7 +30,7 @@
 @media (max-width: 768px) {
     .Header {
         flex-direction: column;
-        justify-items: center;
+        justify-content: center;
         align-items: center;
         text-align: center;
         height: auto;

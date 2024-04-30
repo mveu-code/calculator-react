@@ -76,7 +76,7 @@ app.post('/calculator/add', async (req, res) => {
         await calc.save()
 
         return res.json({
-            message: 'Калькулятор добавлен!'
+            message: 'Калькулятор добавлен. Перезагрузите страницу.'
         })
     } catch (err) {
         res.json({
@@ -111,7 +111,7 @@ app.post('/calculator/delete/:id', async (req, res) => {
         await Calculator.findByIdAndDelete(id)
 
         return res.json({
-            message: 'Калькулятор удалён!'
+            message: 'Калькулятор удалён. Перезагрузите страницу.'
         })
     } catch (err) {
         console.error(err)
@@ -173,7 +173,7 @@ app.get('/calculator/get/one/:id', async (req, res) => {
 
 app.get('/calculator/get/all', async (req, res) => {
     try {
-        const calc = await Calculator.find({}, 'nameCalc')
+        const calc = await Calculator.find({})
         res.json({ data: calc })
     } catch (err) {
         console.error(err)
