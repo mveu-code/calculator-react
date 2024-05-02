@@ -1,12 +1,12 @@
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
-import './InterfaceCalc.css'
+import './Calc.css'
 
 import React from "react";
 import { useParams } from "react-router-dom";
 
-function InterfaceCalc() {
+function Calc() {
   const { id } = useParams()
   const [calc, setCalc] = useState({})
   const [result, setResult] = useState({
@@ -52,7 +52,7 @@ function InterfaceCalc() {
     if (result.price <= 0 || result.time <= 0) {
       return (
         <>
-          <p>Введите корректные данные о будущем кредите, чтобы спланировать свои мечты.</p>
+          <p>Введите данные </p>
         </>
       )
     } else {
@@ -70,7 +70,7 @@ function InterfaceCalc() {
   return (
     <>
       <Header />
-      <div className="InterfaceCalc">
+      <div className="Calc">
         <p>{calc.nameCalc}</p>
         <input id="sum" type="number" placeholder="Сумма (в рублях)" />
         <input id="time" type="number" placeholder="Срок (в годах)" />
@@ -83,4 +83,4 @@ function InterfaceCalc() {
   );
 }
 
-export default InterfaceCalc;
+export default Calc;

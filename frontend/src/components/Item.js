@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import "./CalculatorItem.css";
+import "./Item.css";
 import { useEffect, useState } from "react";
 
-function CalculatorItem({ id }) {
+function Item({ id }) {
   const [calc, setCalc] = useState({});
 
   useEffect(() => {
@@ -17,11 +17,11 @@ function CalculatorItem({ id }) {
   });
 
   return (
-    <div className="CalculatorItem">
+    <div className="Item">
       <p>{calc.nameCalc}</p>
-      <Link to={`/interfaceCalc/${calc._id}`} className="btn">Перейти</Link>
+      <Link to={`/Calc/${calc._id}`} className="btn">Перейти</Link>
     </div>
   );
 }
 
-export default CalculatorItem;
+export default Item;

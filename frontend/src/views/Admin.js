@@ -89,10 +89,10 @@ function Admin() {
         <div className='calcs'>
           {calcs.map((item) => (
             <div className='calc' key={item._id}>
-              <p className='calc-name'>Имя калькулятора: {item.nameCalc}</p>
-              <p className='calc-percent'>Процент: {item.percent}</p>
+              <p className='calc-name'>Имя калькулятора: {item.nameCalc}&nbsp; Процент: {item.percent}</p>
+              <p className='calc-percent'></p>
               <button className='calc-delete' onClick={() => deleteCalc(item._id)}>Удалить калькулятор</button>
-              <button className='calc-edit'>Изменить калькулятор</button>
+
             </div>
           ))}
         </div>

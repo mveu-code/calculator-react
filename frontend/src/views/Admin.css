@@ -1,70 +1,68 @@
 .Admin {
     min-height: calc(100vh - 70px - 70px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
+    background-color: rgb(255, 255, 255);
     max-width: 100%;
     flex-wrap: wrap;
-    padding-bottom: 20px;
 }
 
+
 .Admin input {
-    margin-bottom: 15px;
-    padding: 5px;
-    border-radius: 10px;
-    border-color: #009999;
-    border-style: solid;
-    width: 285px;
+    
+    display: table;
+    padding: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .Admin button {
-    padding: 8px;
-    border-radius: 10px;
-    border-style: none;
-    background-color: #009999;
+    
+    flex-wrap: wrap;
+    max-width: 100%;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    background-color: rgb(255, 0, 0);
     color: white;
-    width: 300px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.Admin button:hover {
+    cursor: pointer;
+
 }
 
 .Admin p {
-    text-align: center;
-    font-size: x-large;
-}
-
-.Admin .calcs {
-    display: flex;
+    
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    max-width: 70%;
+    max-width: 100%;
+    text-align: center;
+    font-size: 20px;
 }
 
-.Admin .calcs .calc {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    border-color: #009999;
-    width: 300px;
+.op {
+    margin-right: 30px;
 }
 
-.Admin .calcs .calc button {
-    width: 250px;
-    margin-bottom: 10px;
-}
+.calc-delete {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    flex-wrap: wrap;
+    max-width: 100%;
 
-.Admin .calcs .calc p {
-    font-size: medium;
-}
-
-@media (max-width: 768px) {
-    .Admin p {
-        font-size: larger;
-    }
-
-    .Admin .calcs {
-        max-width: 100%;
-    }
+    
+    font-size: 15px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    padding: 10px;
+    text-decoration: none;
 }

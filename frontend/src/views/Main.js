@@ -1,7 +1,7 @@
 import "./Main.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CalculatorItem from "../components/CalculatorItem";
+import Item from "../components/Item";
 import React, { useEffect, useState } from "react";
 
 function Main() {
@@ -23,7 +23,7 @@ function Main() {
       <Header />
       <div className="Main">
         {calc.map((item) => (
-          <CalculatorItem id={item._id} key={item._id} />
+          <Item id={item._id} key={item._id} />
         ))}
       </div>
       <Footer />
