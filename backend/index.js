@@ -144,7 +144,7 @@ app.post('/calculator/edit/:id', async (req, res) => {
         await Calculator.findByIdAndUpdate(id, calculator)
 
         return res.json({
-            message: 'Калькулятор удалён!'
+            message: 'Калькулятор изменён. Вернитесь к списку калькуляторов.'
         })
     } catch (err) {
         console.error(err)

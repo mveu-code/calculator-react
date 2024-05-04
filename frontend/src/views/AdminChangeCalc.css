@@ -1,0 +1,46 @@
+.AdminChangeCalc {
+    min-height: calc(100vh - 70px - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    max-width: 100%;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.AdminChangeCalc input {
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    border-color: #009999;
+    border-style: solid;
+}
+
+.AdminChangeCalc button {
+    padding: 8px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #009999;
+    color: white;
+}
+
+.AdminChangeCalc p,
+.AdminChangeCalc .to-admin {
+    text-align: center;
+    font-size: x-large;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .AdminChangeCalc {
+        width: 300px;
+    }
+
+    .AdminChangeCalc p,
+    .AdminChangeCalc .to-admin {
+        font-size: larger;
+    }
+}
