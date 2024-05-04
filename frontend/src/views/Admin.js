@@ -77,6 +77,10 @@ function Admin() {
     }
   }
 
+  const editCalc = async (id) => {
+    navigate('/admin/edit/' + id)
+  }
+
   return (
     <>
       <Header />
@@ -92,7 +96,7 @@ function Admin() {
               <p className='calc-name'>Имя калькулятора: {item.nameCalc}</p>
               <p className='calc-percent'>Процент: {item.percent}</p>
               <button className='calc-delete' onClick={() => deleteCalc(item._id)}>Удалить калькулятор</button>
-              <button className='calc-edit'>Изменить калькулятор</button>
+              <button className='calc-edit' onClick={() => editCalc(item._id)}>Изменить калькулятор</button>
             </div>
           ))}
         </div>
