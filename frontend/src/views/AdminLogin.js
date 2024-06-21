@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import './Admin.css';
+import './AdminLogin.css';
 import { useNavigate } from 'react-router-dom';
 
 function AdminLogin() {
@@ -51,11 +51,11 @@ function AdminLogin() {
   return (
     <>
       <Header />
-      <div className='Admin'>
+      <div className='AdminLogin'>
         <p>Вход в админку</p>
         <input id="login-field" type="text" placeholder="Введите логин от админа" />
         <input id="pass" type="password" placeholder="Введите пароль от админа" />
-        <button id="login-button" onClick={getToken}>Подтвердить</button>
+        <button id="login-button" onClick={getToken}>Создать</button>
         <p id='message'></p>
       </div>
       <Footer />

@@ -1,28 +1,17 @@
 .Main {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    min-height: calc(100vh - 70px - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    width: 1000px;
-    max-width: 100%;
+    width: 400px;
     flex-wrap: wrap;
-
+    padding-bottom: 20px;
 }
 
-.content {
-
-justify-content: center;
-    align-items: center;
-    display: flex;
-    padding: 20px;
-    border-radius: 25px;
-    background-color: rgb(255, 255, 255);
-    max-width: 100%;
-    flex-wrap: wrap;
+@media (max-width: 768px) {
+    .Main {
+        width: 300px;
+    }
 }
-
-.link1 {
-    max-width: 100%;
-    flex-wrap: wrap;
-}
-

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Main from './views/Main';
 import Admin from './views/Admin';
-import Calc from './views/Calc';
+import InterfaceCalc from './views/InterfaceCalc';
 import AdminLogin from './views/AdminLogin';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <Route path='/' element={<Main />} />
         <Route path='/admin' element={<AdminLogin />} />
         <Route path='/admin/main' element={<Admin />} />
-        <Route path='/Calc/:id' element={<Calc />} />
+        <Route path='/interfaceCalc/:id' element={<InterfaceCalc />} />
       </Routes>
     </BrowserRouter>
   );

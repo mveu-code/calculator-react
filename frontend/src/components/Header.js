@@ -30,8 +30,7 @@ function Header() {
 
   return (
     <div className='Header'>
-      <Link className="HeaderLink" to="/">Калькуляторы</Link>
-      <Link className="HeaderLink" to="/admin">Админка</Link>
+      <Link className="HeaderLink" to="/">Кредитные калькуляторы</Link>
       <LogoutButton />
     </div>
   );
