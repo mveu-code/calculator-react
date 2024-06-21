@@ -55,7 +55,7 @@ function AdminLogin() {
         <p>Вход в админку</p>
         <input id="login-field" type="text" placeholder="Введите логин от админа" />
         <input id="pass" type="password" placeholder="Введите пароль от админа" />
-        <button id="login-button" onClick={getToken}>Создать</button>
+        <button id="login-button" onClick={getToken}>Войти</button>
         <p id='message'></p>
       </div>
       <Footer />
