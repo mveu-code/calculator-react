@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+import { Schema, model } from 'mongoose'
 
 const Calculator = new Schema({
     nameCalc: {
@@ -11,4 +11,4 @@ const Calculator = new Schema({
     }
 })
 
-module.exports = model('Calculator', Calculator)
+export default model('Calculator', Calculator)

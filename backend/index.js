@@ -1,13 +1,13 @@
 const PORT = 9001
 const URLDB = 'mongodb://127.0.0.1:27017/'
 
-const express = require('express')
-const cors = require('cors')
-const jsonwebtoken = require('jsonwebtoken')
-const mongoose = require('mongoose')
-const { secret } = require('./config')
-const User = require('./models/User')
-const Calculator = require('./models/Calculator')
+import express from 'express'
+import cors from 'cors'
+import jsonwebtoken from 'jsonwebtoken'
+import mongoose from 'mongoose'
+import { secret } from './config.js'
+import User from './models/User.js'
+import Calculator from './models/Calculator.js'
 
 const app = express()
 
